@@ -12,7 +12,8 @@
     <h1 class="title">NicheFocus</h1>
     <p class="subtitle">Masukkan niche untuk mencari interest yang relevan</p>
     <div class="card">
-      <input type="text" id="nicheInput" placeholder="Contoh: skincare, parenting, fitness" />
+      <input type="text" id="nicheInput" list="suggestions" placeholder="Contoh: skincare, fitness" />
+      <datalist id="suggestions"></datalist>
       <button onclick="generateInterest()">Cari Interest</button>
     </div>
 
