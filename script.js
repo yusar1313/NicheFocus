@@ -1,22 +1,25 @@
 
 const interestData = {
   "skincare": [
-    { "name": "Skincare Enthusiast", "audience": "1.200.000", "tag": "Beauty" },
-    { "name": "Natural skincare", "audience": "880.000", "tag": "Beauty" }
+    { "name": "Skincare Enthusiast", "audience": "1.200.000" },
+    { "name": "Natural skincare", "audience": "880.000" }
   ],
   "fitness": [
-    { "name": "Fitness & weight loss", "audience": "5.300.000", "tag": "Health" },
-    { "name": "Gym workout", "audience": "3.100.000", "tag": "Health" }
+    { "name": "Fitness & weight loss", "audience": "5.300.000" },
+    { "name": "Gym workout", "audience": "3.100.000" }
   ],
   "parenting": [
-    { "name": "Young moms", "audience": "2.400.000", "tag": "General" },
-    { "name": "Parenting tips", "audience": "1.900.000", "tag": "General" }
+    { "name": "Young moms", "audience": "2.400.000" },
+    { "name": "Parenting tips", "audience": "1.900.000" }
+  ],
+  "dropship": [
+    { "name": "Dropshipping", "audience": "3.000.000" },
+    { "name": "Shopify store owner", "audience": "2.500.000" }
   ]
 };
 
 function generateInterest() {
   const input = document.getElementById('nicheInput').value.toLowerCase();
-  const filterTag = document.getElementById('filterSelect').value;
   const resultSection = document.getElementById('results');
   const list = document.getElementById('interestList');
   list.innerHTML = "";
@@ -30,16 +33,11 @@ function generateInterest() {
     }
   });
 
-  if (filterTag) {
-    results = results.filter(item => item.tag === filterTag);
-  }
-
   if (results.length > 0) {
     resultSection.classList.remove("hidden");
     results.forEach(item => {
-      const tag = item.tag ? ` <span style='font-size: 12px; color: #666;'>(${item.tag})</span>` : "";
       const div = document.createElement("div");
-      div.innerHTML = `<strong>${item.name}</strong> - ${item.audience}${tag}`;
+      div.innerHTML = `<strong>${item.name}</strong> - ${item.audience}`;
       list.appendChild(div);
     });
   } else {

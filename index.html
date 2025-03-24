@@ -8,30 +8,23 @@
   <link rel="stylesheet" href="style.minimal.css" />
 </head>
 <body>
-  <main class="container">
+  <div class="container">
     <h1 class="title">NicheFocus</h1>
     <p class="subtitle">Masukkan niche untuk mencari interest yang relevan</p>
+    <div class="card">
+      <input type="text" id="nicheInput" placeholder="Contoh: skincare, parenting, fitness" />
+      <button onclick="generateInterest()">Cari Interest</button>
+    </div>
 
-    <input type="text" id="nicheInput" placeholder="Contoh: skincare, parenting, fitness" />
-    <select id="filterSelect">
-      <option value="">Semua</option>
-      <option value="Health">Health</option>
-      <option value="Beauty">Beauty</option>
-      <option value="Shopping">Shopping</option>
-      <option value="Marketplace">Marketplace</option>
-    </select>
-    <button onclick="generateInterest()">Cari Interest</button>
-
-    <section id="results" class="hidden">
+    <div id="results" class="results hidden">
       <h2>Hasil Interest</h2>
-      <div id="interestList"></div>
+      <div id="interestList" class="interest-list"></div>
       <div class="actions">
         <button onclick="copyInterest()">Salin Semua</button>
         <button onclick="exportCSV()">Export CSV</button>
       </div>
-    </section>
-  </main>
-
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
