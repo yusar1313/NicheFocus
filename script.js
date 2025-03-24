@@ -1,37 +1,24 @@
 
-const interestData = {
-  "skincare": [
-    { "name": "Skincare Enthusiast", "audience": "1.200.000", "related": ["Natural skincare", "Skincare routine"] },
-    { "name": "Natural skincare", "audience": "880.000", "related": ["Skincare Enthusiast", "Korean skincare"] }
-  ],
-  "fitness": [
-    { "name": "Fitness & weight loss", "audience": "5.300.000", "related": ["Gym workout", "Home workout"] },
-    { "name": "Gym workout", "audience": "3.100.000", "related": ["Strength training", "Cardio"] }
-  ],
-  "dropship": [
-    { "name": "Dropshipping", "audience": "3.000.000", "related": ["Shopify", "Reseller"] },
-    { "name": "Shopify store owner", "audience": "2.500.000", "related": ["Dropshipping", "Online business"] }
-  ]
-};
+let interestData = {};
+let suggestionData = [];
 
-let savedInterests = [];
+fetch('interest.json')
+  .then(response => response.json())
+  .then(data => {
+    interestData = data;
+  });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById('nicheInput');
-  const datalist = document.getElementById('suggestions');
-
-  input.addEventListener("input", () => {
-    const val = input.value.toLowerCase();
-    datalist.innerHTML = "";
-    Object.keys(interestData).forEach(key => {
-      if (key.startsWith(val)) {
-        const option = document.createElement("option");
-        option.value = key;
-        datalist.appendChild(option);
-      }
+fetch('interest-suggestions-full.json')
+  .then(response => response.json())
+  .then(data => {
+    suggestionData = data;
+    const datalist = document.getElementById('suggestions');
+    data.forEach(item => {
+      const opt = document.createElement("option");
+      opt.value = item;
+      datalist.appendChild(opt);
     });
   });
-});
 
 function generateInterest() {
   const input = document.getElementById('nicheInput').value.toLowerCase();
@@ -39,19 +26,12 @@ function generateInterest() {
   const list = document.getElementById('interestList');
   list.innerHTML = "";
 
-  const keywords = input.split(",").map(k => k.trim()).filter(k => k);
+  let keywords = input.split(",").map(k => k.trim()).filter(k => k);
   let results = [];
 
   keywords.forEach(keyword => {
     if (interestData[keyword]) {
       results = results.concat(interestData[keyword]);
-      interestData[keyword].forEach(item => {
-        if (item.related) {
-          item.related.forEach(rel => {
-            results.push({ name: rel, audience: "Estimasi", related: [] });
-          });
-        }
-      });
     }
   });
 
@@ -59,8 +39,7 @@ function generateInterest() {
     resultSection.classList.remove("hidden");
     results.forEach(item => {
       const div = document.createElement("div");
-      const saveBtn = `<button onclick="saveInterest('${item.name}')" class="save-btn">⭐</button>`;
-      div.innerHTML = `<strong>${item.name}</strong> - ${item.audience} ${saveBtn}`;
+      div.innerHTML = `<strong>${item.name}</strong> - ${item.audience}`;
       list.appendChild(div);
     });
   } else {
@@ -78,10 +57,10 @@ function copyInterest() {
 
 function exportCSV() {
   const listItems = document.querySelectorAll("#interestList strong");
-  let csvContent = "data:text/csv;charset=utf-8,Interest,Audience\n";
+  let csvContent = "data:text/csv;charset=utf-8,Interest
+";
   listItems.forEach(item => {
-    const audience = item.parentElement.textContent.split(" - ")[1]?.trim() || "";
-    csvContent += item.textContent + "," + audience + "\n";
+    csvContent += item.textContent + "\n";
   });
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement("a");
@@ -89,13 +68,4 @@ function exportCSV() {
   link.setAttribute("download", "interest.csv");
   document.body.appendChild(link);
   link.click();
-}
-
-function saveInterest(name) {
-  if (!savedInterests.includes(name)) {
-    savedInterests.push(name);
-    alert(`Interest "${name}" berhasil disimpan!`);
-  } else {
-    alert(`Interest "${name}" sudah ada di daftar.`);
-  }
 }

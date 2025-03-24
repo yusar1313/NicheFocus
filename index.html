@@ -1,29 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NicheFocus</title>
   <link rel="stylesheet" href="style.minimal.css" />
 </head>
 <body>
   <div class="container">
-    <h1 class="title">NicheFocus</h1>
-    <p class="subtitle">Masukkan niche untuk mencari interest yang relevan</p>
-    <div class="card">
-      <input type="text" id="nicheInput" list="suggestions" placeholder="Contoh: skincare, fitness" />
-      <datalist id="suggestions"></datalist>
-      <button onclick="generateInterest()">Cari Interest</button>
-    </div>
+    <h1>NicheFocus</h1>
+    <p>Masukkan niche untuk mencari interest yang relevan</p>
+    <input type="text" id="nicheInput" list="suggestions" placeholder="Contoh: skincare, fitness" />
+    <datalist id="suggestions"></datalist>
+    <button onclick="generateInterest()">Cari Interest</button>
 
-    <div id="results" class="results hidden">
+    <div id="results" class="hidden">
       <h2>Hasil Interest</h2>
-      <div id="interestList" class="interest-list"></div>
-      <div class="actions">
-        <button onclick="copyInterest()">Salin Semua</button>
-        <button onclick="exportCSV()">Export CSV</button>
-      </div>
+      <div id="interestList"></div>
+      <button onclick="copyInterest()">Salin Semua</button>
+      <button onclick="exportCSV()">Export CSV</button>
     </div>
   </div>
   <script src="script.js"></script>
