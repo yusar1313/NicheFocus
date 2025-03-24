@@ -1,0 +1,164 @@
+{
+  "skincare": [
+    {
+      "name": "Skincare",
+      "audience": "5.200.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Beauty tips",
+      "audience": "2.800.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Facial treatment",
+      "audience": "1.900.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Organic skincare",
+      "audience": "1.300.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Anti-aging",
+      "audience": "Estimasii",
+      "tag": "Health"
+    }
+  ],
+  "diet": [
+    {
+      "name": "Healthy diet",
+      "audience": "3.600.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Weight loss",
+      "audience": "4.100.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Low-carb diet",
+      "audience": "1.500.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Keto",
+      "audience": "2.000.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Intermittent fasting",
+      "audience": "Estimasii",
+      "tag": "Health"
+    }
+  ],
+  "parenting": [
+    {
+      "name": "Parenting",
+      "audience": "7.300.000",
+      "tag": "Family"
+    },
+    {
+      "name": "New parents",
+      "audience": "2.900.000",
+      "tag": "Family"
+    },
+    {
+      "name": "Pregnancy",
+      "audience": "3.400.000",
+      "tag": "Family"
+    },
+    {
+      "name": "Childcare",
+      "audience": "2.100.000",
+      "tag": "Family"
+    },
+    {
+      "name": "Parenting tips",
+      "audience": "Estimasii",
+      "tag": "Family"
+    }
+  ],
+  "gaming": [
+    {
+      "name": "Mobile gaming",
+      "audience": "9.200.000",
+      "tag": "Entertainment"
+    },
+    {
+      "name": "Esports",
+      "audience": "4.000.000",
+      "tag": "Entertainment"
+    },
+    {
+      "name": "Console gaming",
+      "audience": "3.600.000",
+      "tag": "Entertainment"
+    },
+    {
+      "name": "PC gaming",
+      "audience": "4.700.000",
+      "tag": "Entertainment"
+    },
+    {
+      "name": "Game streaming",
+      "audience": "Estimasii",
+      "tag": "Entertainment"
+    }
+  ],
+  "fitness": [
+    {
+      "name": "Fitness & weight loss",
+      "audience": "5.300.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Gym workout",
+      "audience": "3.100.000",
+      "tag": "Health"
+    },
+    {
+      "name": "Home workout",
+      "audience": "Estimasii",
+      "tag": "Health"
+    },
+    {
+      "name": "Strength training",
+      "audience": "Estimasii",
+      "tag": "Health"
+    },
+    {
+      "name": "Cardio",
+      "audience": "Estimasii",
+      "tag": "Health"
+    }
+  ],
+  "online shopping": [
+    {
+      "name": "Online shopping",
+      "audience": "8.000.000",
+      "tag": "Shopping"
+    },
+    {
+      "name": "Shopee",
+      "audience": "6.200.000",
+      "tag": "Shopping"
+    },
+    {
+      "name": "Tokopedia",
+      "audience": "5.800.000",
+      "tag": "Shopping"
+    },
+    {
+      "name": "Cash on delivery",
+      "audience": "3.400.000",
+      "tag": "Shopping"
+    },
+    {
+      "name": "Voucher & Promo",
+      "audience": "Estimasii",
+      "tag": "Shopping"
+    }
+  ]
+}
